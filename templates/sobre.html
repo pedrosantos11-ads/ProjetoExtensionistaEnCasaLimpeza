@@ -1,0 +1,223 @@
+{% extends 'base.html' %}
+
+{% block titulo %}EnCasaLimpeza – Sobre{% endblock %}
+
+{% block estilos %}
+<style>
+.sobre-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-lg);
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 var(--espaco-md);
+    align-items: center;
+}
+
+.sobre-texto h2 {
+    margin-bottom: var(--espaco-md);
+}
+
+.sobre-texto p {
+    margin-bottom: var(--espaco-md);
+    line-height: 1.7;
+}
+
+.sobre-imagem img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--sombra-md);
+}
+
+.valores-section {
+    text-align: center;
+    padding: var(--espaco-xl) var(--espaco-md);
+}
+
+.valores-section h2 {
+    margin-bottom: 8px;
+}
+
+.valores-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--espaco-md);
+    max-width: 1100px;
+    margin: var(--espaco-lg) auto 0;
+}
+
+.valor-card {
+    background: var(--cor-card);
+    border-radius: var(--radius-lg);
+    padding: var(--espaco-md);
+    box-shadow: var(--sombra-md);
+}
+
+.valor-card i {
+    width: 32px;
+    height: 32px;
+    color: var(--cor-primaria);
+    margin-bottom: 12px;
+}
+
+.valor-card h3 {
+    margin-bottom: 8px;
+}
+
+.numeros-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--espaco-md);
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: var(--espaco-xl) var(--espaco-md);
+}
+
+.numeros-section strong {
+    display: block;
+    font-size: 2rem;
+    color: var(--cor-primaria);
+}
+
+.missao-section {
+    background: var(--cor-gradiente);
+    text-align: center;
+    padding: var(--espaco-xl) var(--espaco-md);
+}
+
+.missao-section h2,
+.missao-section p {
+    color: var(--cor-texto-inv);
+}
+
+.missao-section h2 {
+    margin-bottom: 12px;
+}
+
+.missao-section p {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .sobre-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .valores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .numeros-section {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+</style>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+{% endblock %}
+
+{% block conteudo %}
+<section class="page-header">
+    <h1>Sobre a EnCasaLimpeza</h1>
+    <p>Uma história de dedicação e qualidade no mercado de produtos de limpeza</p>
+</section>
+
+<section class="sobre-layout">
+    <div class="sobre-texto">
+        <h2>Nossa História</h2>
+
+        <p>
+            Fundada em 2010, a EnCasaLimpeza nasceu do sonho de oferecer produtos
+            de limpeza de qualidade com preços justos para toda a comunidade.
+        </p>
+
+        <p>
+            O que começou como uma pequena loja de bairro, hoje é referência na
+            região, oferecendo variedade, confiança e atendimento personalizado.
+        </p>
+
+        <p>
+            Com mais de 15 anos de experiência, construímos uma sólida reputação
+            baseada em qualidade, compromisso e respeito pelos nossos clientes.
+        </p>
+
+        <p>
+            Trabalhamos com produtos para uso doméstico e soluções profissionais,
+            ajudando nossos clientes a manterem ambientes mais limpos, saudáveis
+            e acolhedores.
+        </p>
+    </div>
+
+    <div class="sobre-imagem">
+        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" alt="Produtos de limpeza">
+    </div>
+</section>
+
+<section class="valores-section">
+    <h2>Nossos Valores</h2>
+    <p>Princípios que guiam nosso trabalho diariamente</p>
+
+    <div class="valores-grid">
+        <div class="valor-card">
+            <i data-lucide="target"></i>
+            <h3>Compromisso</h3>
+            <p>Comprometidos em oferecer os melhores produtos e serviços aos nossos clientes.</p>
+        </div>
+
+        <div class="valor-card">
+            <i data-lucide="users"></i>
+            <h3>Atendimento</h3>
+            <p>Equipe treinada e dedicada para atender suas necessidades com excelência.</p>
+        </div>
+
+        <div class="valor-card">
+            <i data-lucide="heart"></i>
+            <h3>Confiança</h3>
+            <p>Construindo relacionamentos duradouros baseados em confiança e transparência.</p>
+        </div>
+
+        <div class="valor-card">
+            <i data-lucide="trending-up"></i>
+            <h3>Inovação</h3>
+            <p>Sempre em busca de novos produtos e soluções para facilitar sua vida.</p>
+        </div>
+    </div>
+</section>
+
+<section class="numeros-section">
+    <div>
+        <strong>15+</strong>
+        <p>Anos de Mercado</p>
+    </div>
+
+    <div>
+        <strong>500+</strong>
+        <p>Produtos</p>
+    </div>
+
+    <div>
+        <strong>5000+</strong>
+        <p>Clientes Satisfeitos</p>
+    </div>
+
+    <div>
+        <strong>98%</strong>
+        <p>Satisfação</p>
+    </div>
+</section>
+
+<section class="missao-section">
+    <h2>Nossa Missão</h2>
+    <p>
+        Oferecer produtos de limpeza de alta qualidade com preços acessíveis,
+        proporcionando um atendimento personalizado e contribuindo para ambientes
+        mais limpos, saudáveis e sustentáveis em nossa comunidade.
+    </p>
+</section>
+
+<script>
+    lucide.createIcons();
+</script>
+{% endblock %}
