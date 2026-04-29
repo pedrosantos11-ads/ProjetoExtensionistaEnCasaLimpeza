@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block titulo %}EnCasaLimpeza{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css') }}">
+  {% block estilos %}{% endblock %}
+</head>
+<body>
+
+  <nav class="navbar">
+    <a href="{{ url_for('inicio') }}" class="navbar-logo">EnCasaLimpeza</a>
+
+    <ul class="navbar-links">
+      <li><a href="{{ url_for('inicio') }}" {% if request.endpoint == 'inicio' %}class="ativo"{% endif %}>Início</a></li>
+      <li><a href="{{ url_for('sobre') }}" {% if request.endpoint == 'sobre' %}class="ativo"{% endif %}>Sobre</a></li>
+      <li><a href="{{ url_for('produtos') }}" {% if request.endpoint == 'produtos' %}class="ativo"{% endif %}>Produtos</a></li>
+      <li><a href="{{ url_for('catalogo') }}" {% if request.endpoint == 'catalogo' %}class="ativo"{% endif %}>Catálogo</a></li>
+      <li><a href="{{ url_for('contato') }}" {% if request.endpoint == 'contato' %}class="ativo"{% endif %}>Contato</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    {% block conteudo %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 EnCasaLimpeza – Produtos e Serviços de Limpeza em Geral</p>
+  </footer>
+
+</body>
+</html>
