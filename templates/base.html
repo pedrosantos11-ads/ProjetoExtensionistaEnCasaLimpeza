@@ -15,7 +15,6 @@
     <ul class="navbar-links">
       <li><a href="{{ url_for('inicio') }}" {% if request.endpoint == 'inicio' %}class="ativo"{% endif %}>Início</a></li>
       <li><a href="{{ url_for('sobre') }}" {% if request.endpoint == 'sobre' %}class="ativo"{% endif %}>Sobre</a></li>
-      <li><a href="{{ url_for('produtos') }}" {% if request.endpoint == 'produtos' %}class="ativo"{% endif %}>Produtos</a></li>
       <li><a href="{{ url_for('catalogo') }}" {% if request.endpoint == 'catalogo' %}class="ativo"{% endif %}>Catálogo</a></li>
       <li><a href="{{ url_for('contato') }}" {% if request.endpoint == 'contato' %}class="ativo"{% endif %}>Contato</a></li>
     </ul>
