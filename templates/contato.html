@@ -53,6 +53,41 @@
     gap: 16px;
   }
 
+  .alerta {
+    max-width: 1000px;
+    margin: 16px auto 0;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .alerta-sucesso {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+  }
+
+  .alerta-erro {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+  }
+
+  .erros-servidor {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #991b1b;
+    font-size: 0.9rem;
+  }
+
+  .erros-servidor ul {
+    list-style: disc;
+    padding-left: 16px;
+  }
+
   .visite-loja {
     text-align: center;
     padding: 60px 32px;
@@ -107,7 +142,8 @@
   .btn-ligar:hover {
     background-color: #2563eb;
   }
-    .error-message {
+
+  .error-message {
     display: block;
     margin-top: 6px;
     font-size: 0.85rem;
@@ -131,6 +167,16 @@
   <h1>Entre em Contato</h1>
   <p>Estamos prontos para atender você. Visite nossa loja ou entre em contato pelos canais abaixo.</p>
 </section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for categoria, mensagem in messages %}
+      <div class="alerta alerta-{{ categoria }}">
+        {{ mensagem }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 
 <section class="contato-layout">
   <div class="contato-info">
@@ -173,22 +219,22 @@
   <div class="contato-formulario">
     <h2>Envie uma Mensagem</h2>
 
-  <form class="contato-form" action="/contato" method="POST" onsubmit="return validateForm()">
+    <form class="contato-form" action="{{ url_for('contato') }}" method="POST" onsubmit="return validateForm()">
       <div>
         <label for="nome">Nome Completo *</label>
-        <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" value="{{ form.nome if form else '' }}" required>
         <small id="nome-error" class="error-message"></small>
       </div>
 
       <div>
         <label for="email">Email *</label>
-        <input type="email" id="email" name="email" placeholder="seu@email.com" required>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" value="{{ form.email if form else '' }}" required>
         <small id="email-error" class="error-message"></small>
       </div>
 
       <div>
-        <label for="telefone">Telefone</label>
-        <input type="tel" id="telefone" name="telefone" placeholder="(35) 99999-9999">
+        <label for="telefone">Telefone *</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(35) 99999-9999" value="{{ form.telefone if form else '' }}" required>
         <small id="telefone-error" class="error-message"></small>
       </div>
 
@@ -196,18 +242,28 @@
         <label for="assunto">Assunto *</label>
         <select id="assunto" name="assunto" required>
           <option value="">Selecione um assunto</option>
-          <option value="orcamento">Orçamento</option>
-          <option value="duvidas">Dúvidas</option>
-          <option value="reclamacao">Reclamação</option>
+          <option value="orcamento" {% if form and form.assunto == 'orcamento' %}selected{% endif %}>Orçamento</option>
+          <option value="duvidas" {% if form and form.assunto == 'duvidas' %}selected{% endif %}>Dúvidas</option>
+          <option value="reclamacao" {% if form and form.assunto == 'reclamacao' %}selected{% endif %}>Reclamação</option>
         </select>
         <small id="assunto-error" class="error-message"></small>
       </div>
 
       <div>
         <label for="mensagem">Mensagem *</label>
-        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem..." required></textarea>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem..." required>{{ form.mensagem if form else '' }}</textarea>
         <small id="mensagem-error" class="error-message"></small>
       </div>
+
+      {% if erros %}
+        <div class="erros-servidor">
+          <ul>
+            {% for erro in erros %}
+              <li>{{ erro }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
 
       <button type="submit" class="btn btn-primario btn-grande">Enviar Mensagem</button>
     </form>
@@ -222,6 +278,7 @@
     <a href="tel:+553532237075" class="btn-ligar">Ligar Agora</a>
   </div>
 </section>
+
 <script>
   function showError(fieldId, message) {
     const field = document.getElementById(fieldId)
@@ -244,6 +301,11 @@
 
     if (name === '') {
       showError('nome', 'O nome é obrigatório.')
+      return false
+    }
+
+    if (name.length < 2) {
+      showError('nome', 'O nome deve ter pelo menos 2 caracteres.')
       return false
     }
 
@@ -273,8 +335,8 @@
     const numbersOnly = phone.replace(/\D/g, '')
 
     if (phone === '') {
-      clearError('telefone')
-      return true
+      showError('telefone', 'O telefone é obrigatório.')
+      return false
     }
 
     if (numbersOnly.length < 10 || numbersOnly.length > 11) {
@@ -303,6 +365,11 @@
 
     if (message === '') {
       showError('mensagem', 'A mensagem é obrigatória.')
+      return false
+    }
+
+    if (message.length < 10) {
+      showError('mensagem', 'A mensagem deve ter pelo menos 10 caracteres.')
       return false
     }
 
