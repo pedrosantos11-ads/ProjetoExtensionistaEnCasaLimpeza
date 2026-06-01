@@ -5,7 +5,7 @@
 {% block estilos %}
 <style>
   .inicio-hero {
-    min-height: 85vh;
+    min-height: 88vh;
     background:
       linear-gradient(90deg, rgba(0, 180, 160, 0.82), rgba(0, 120, 200, 0.82)),
       url("{{ url_for('static', filename='img/hero.jpg') }}") center/cover no-repeat;
@@ -14,34 +14,39 @@
     justify-content: center;
     text-align: center;
     color: white;
-    padding: 120px 24px 80px;
+    padding: 100px 24px 72px;
     margin-top: 0;
   }
 
   .inicio-hero-content {
-    max-width: 760px;
+    width: min(920px, 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 18px;
+    gap: 14px;
   }
 
-  .inicio-hero img {
-    width: 180px;
-    max-width: 100%;
+  .inicio-hero-logo {
+    width: min(360px, 58vw);
+    max-width: 360px;
+    height: auto;
+    display: block;
+    margin: 0 auto 4px;
   }
 
   .inicio-hero h1 {
-    font-size: 2.8rem;
-    line-height: 1.15;
+    font-size: clamp(1.55rem, 2.6vw, 2.3rem);
+    line-height: 1.12;
     margin: 0;
     color: #ffffff;
+    max-width: 850px;
+    font-weight: 700;
   }
 
   .inicio-hero p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 620px;
+    font-size: clamp(0.95rem, 1.18vw, 1.06rem);
+    line-height: 1.55;
+    max-width: 680px;
     margin: 0;
     color: #f8fafc;
   }
@@ -51,12 +56,15 @@
     gap: 16px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 10px;
+    margin-top: 14px;
   }
 
   .btn-inicio-primario,
-  .btn-inicio-secundario {
-    display: inline-block;
+  .btn-inicio-secundario,
+  .cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
     padding: 12px 24px;
     border-radius: 8px;
     text-decoration: none;
@@ -124,6 +132,13 @@
     transform: translateY(-5px);
   }
 
+  .card-icon {
+    width: 36px;
+    height: 36px;
+    color: #00a3c4;
+    margin-bottom: 12px;
+  }
+
   .card h3 {
     margin-bottom: 10px;
     color: #0f172a;
@@ -189,54 +204,40 @@
     color: rgba(255, 255, 255, 0.9);
   }
 
-  .cta a {
-    display: inline-block;
+  .cta-btn {
     margin-top: 20px;
-    padding: 12px 25px;
     background: white;
     color: #00a3c4;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
+  }
+
+  .cta-btn:hover {
+    background: #f8fafc;
+  }
+
+  .action-icon {
+    width: 18px;
+    height: 18px;
+    stroke-width: 2.25;
   }
 
   @media (max-width: 900px) {
-    .grid {
-      grid-template-columns: 1fr 1fr;
-    }
-
-    .cat-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .inicio-hero h1 {
-      font-size: 2.2rem;
-    }
+    .grid { grid-template-columns: 1fr 1fr; }
+    .cat-grid { grid-template-columns: 1fr; }
+    .inicio-hero { min-height: 84vh; }
+    .inicio-hero-logo { width: min(320px, 64vw); }
   }
 
   @media (max-width: 600px) {
     .why,
     .categorias,
-    .cta {
-      padding: 56px 20px;
-    }
-
-    .grid {
-      grid-template-columns: 1fr;
-    }
-
-    .inicio-hero {
-      min-height: 78vh;
-      padding: 110px 20px 60px;
-    }
-
-    .inicio-hero h1 {
-      font-size: 1.9rem;
-    }
-
-    .inicio-hero p {
-      font-size: 1rem;
-    }
+    .cta { padding: 56px 20px; }
+    .grid { grid-template-columns: 1fr; }
+    .inicio-hero { min-height: 80vh; padding: 84px 16px 56px; }
+    .inicio-hero-logo { width: min(280px, 72vw); }
+    .inicio-hero-acoes { gap: 12px; }
+    .btn-inicio-primario,
+    .btn-inicio-secundario,
+    .cta-btn { padding: 11px 20px; }
   }
 </style>
 {% endblock %}
@@ -244,7 +245,7 @@
 {% block conteudo %}
 <section class="inicio-hero">
   <div class="inicio-hero-content">
-    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo da EnCasaLimpeza">
+    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo da EnCasaLimpeza" class="inicio-hero-logo">
 
     <h1>Qualidade, variedade e confiança para sua limpeza no dia a dia</h1>
 
@@ -253,8 +254,14 @@
     </p>
 
     <div class="inicio-hero-acoes">
-      <a href="{{ url_for('catalogo') }}" class="btn-inicio-primario">Ver Catálogo</a>
-      <a href="{{ url_for('contato') }}" class="btn-inicio-secundario">Fale Conosco</a>
+      <a href="{{ url_for('catalogo') }}" class="btn-inicio-primario">
+        <i data-lucide="shopping-cart" class="action-icon"></i>
+        Ver Catálogo
+      </a>
+      <a href="{{ url_for('contato') }}" class="btn-inicio-secundario">
+        <i data-lucide="message-circle" class="action-icon"></i>
+        Fale Conosco
+      </a>
     </div>
   </div>
 </section>
@@ -265,21 +272,25 @@
 
   <div class="grid">
     <div class="card">
+      <i data-lucide="badge-check" class="card-icon"></i>
       <h3>Qualidade Garantida</h3>
       <p>Trabalhamos com marcas confiáveis e produtos seguros para sua rotina.</p>
     </div>
 
     <div class="card">
+      <i data-lucide="truck" class="card-icon"></i>
       <h3>Entrega Rápida</h3>
       <p>Agilidade no atendimento e mais praticidade para sua necessidade.</p>
     </div>
 
     <div class="card">
+      <i data-lucide="package" class="card-icon"></i>
       <h3>Variedade</h3>
       <p>Opções para limpeza doméstica, profissional e cuidados do dia a dia.</p>
     </div>
 
     <div class="card">
+      <i data-lucide="headset" class="card-icon"></i>
       <h3>Atendimento Próximo</h3>
       <p>Equipe preparada para orientar sua compra com atenção e clareza.</p>
     </div>
@@ -312,6 +323,9 @@
 <section class="cta">
   <h2>Pronto para fazer seu pedido?</h2>
   <p>Fale com nossa equipe e encontre a melhor solução para sua necessidade.</p>
-  <a href="{{ url_for('contato') }}">Entrar em Contato</a>
+  <a href="{{ url_for('contato') }}" class="cta-btn">
+    <i data-lucide="message-circle" class="action-icon"></i>
+    Entrar em Contato
+  </a>
 </section>
 {% endblock %}

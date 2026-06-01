@@ -179,6 +179,35 @@
     line-height: 1;
   }
 
+  .ver-mais-wrap {
+    text-align: center;
+    margin-top: 40px;
+    display: none;
+  }
+
+  .btn-ver-mais {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 48px;
+    padding: 0 40px;
+    border-radius: 10px;
+    background: #10c64b;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: filter 0.2s ease, transform 0.2s ease;
+  }
+
+  .btn-ver-mais:hover,
+  .btn-ver-mais:focus-visible {
+    filter: brightness(0.95);
+    transform: translateY(-1px);
+  }
+
   @media (max-width: 1024px) {
     .catalogo-grid {
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -246,7 +275,7 @@
 <section class="catalogo-conteudo">
   <p class="catalogo-resumo">Mostrando {{ produtos|length }} produtos</p>
 
-  <div class="catalogo-grid">
+  <div class="catalogo-grid" id="catalogo-grid">
     {% for produto in produtos %}
     <article class="produto-card">
       <div class="produto-card-topo">
@@ -293,5 +322,37 @@
     </article>
     {% endfor %}
   </div>
+
+  <div class="ver-mais-wrap" id="ver-mais-wrap">
+    <button class="btn-ver-mais" id="btn-ver-mais" type="button">
+      Ver mais produtos
+    </button>
+  </div>
 </section>
+
+<script>
+  (function () {
+    var CARDS_POR_VEZ = 8;
+    var grid = document.getElementById('catalogo-grid');
+    var btnWrap = document.getElementById('ver-mais-wrap');
+    var btn = document.getElementById('btn-ver-mais');
+    var cards = Array.from(grid.querySelectorAll('.produto-card'));
+    var visiveis = CARDS_POR_VEZ;
+
+    function atualizar() {
+      cards.forEach(function (card, index) {
+        card.style.display = index < visiveis ? '' : 'none';
+      });
+
+      btnWrap.style.display = visiveis >= cards.length ? 'none' : 'block';
+    }
+
+    btn.addEventListener('click', function () {
+      visiveis += CARDS_POR_VEZ;
+      atualizar();
+    });
+
+    atualizar();
+  })();
+</script>
 {% endblock %}

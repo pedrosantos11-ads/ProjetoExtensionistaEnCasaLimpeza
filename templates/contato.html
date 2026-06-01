@@ -8,9 +8,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: var(--espaco-lg);
-    max-width: 1000px;
+    max-width: 1180px;
     margin: 60px auto;
     padding: 0 var(--espaco-md);
+    align-items: start;
   }
 
   .contato-info h2,
@@ -47,6 +48,30 @@
     color: var(--cor-primaria);
   }
 
+  .contato-bloco-mapa {
+    margin-top: 18px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    background: #fff;
+  }
+
+  .mapa-container {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    padding-top: 62%;
+  }
+
+  .mapa-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
   .contato-form {
     display: flex;
     flex-direction: column;
@@ -54,7 +79,7 @@
   }
 
   .alerta {
-    max-width: 1000px;
+    max-width: 1180px;
     margin: 16px auto 0;
     padding: 14px 20px;
     border-radius: 8px;
@@ -158,6 +183,10 @@
     .contato-layout {
       grid-template-columns: 1fr;
     }
+
+    .mapa-container {
+      padding-top: 72%;
+    }
   }
 </style>
 {% endblock %}
@@ -183,7 +212,7 @@
     <h2>Informações de Contato</h2>
 
     <div class="contato-item">
-      <span class="contato-item-icone">📍</span>
+     <span class="contato-item-icone"><i data-lucide="map-pin"></i></span>
       <div>
         <strong>Endereço</strong>
         <p>Praça São Charbel, 12, Jardim Andere</p>
@@ -191,7 +220,7 @@
     </div>
 
     <div class="contato-item">
-      <span class="contato-item-icone">📞</span>
+      <span class="contato-item-icone"><i data-lucide="phone"></i></span>
       <div>
         <strong>Telefone</strong>
         <a href="tel:+553532237075">(35) 3223-7075</a>
@@ -199,7 +228,7 @@
     </div>
 
     <div class="contato-item">
-      <span class="contato-item-icone">✉️</span>
+      <span class="contato-item-icone"><i data-lucide="mail"></i></span>
       <div>
         <strong>Email</strong>
         <a href="mailto:vendas@encasalimpeza.com.br">vendas@encasalimpeza.com.br</a>
@@ -207,11 +236,23 @@
     </div>
 
     <div class="contato-item">
-      <span class="contato-item-icone">🕐</span>
+     <span class="contato-item-icone"><i data-lucide="clock-3"></i></span>
       <div>
         <strong>Horário</strong>
         <p>Segunda a Sexta: 08h às 18h</p>
         <p>Sábado: 08h às 12h</p>
+      </div>
+    </div>
+
+    <div class="contato-bloco-mapa">
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps?q=Pra%C3%A7a%20S%C3%A3o%20Charbel,%2012,%20Jardim%20Andere&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa da EnCasaLimpeza"
+          allowfullscreen>
+        </iframe>
       </div>
     </div>
   </div>
@@ -281,116 +322,99 @@
 
 <script>
   function showError(fieldId, message) {
-    const field = document.getElementById(fieldId)
-    const error = document.getElementById(fieldId + '-error')
-
-    field.classList.add('input-error')
-    error.textContent = message
+    const field = document.getElementById(fieldId);
+    const error = document.getElementById(fieldId + '-error');
+    field.classList.add('input-error');
+    error.textContent = message;
   }
 
   function clearError(fieldId) {
-    const field = document.getElementById(fieldId)
-    const error = document.getElementById(fieldId + '-error')
-
-    field.classList.remove('input-error')
-    error.textContent = ''
+    const field = document.getElementById(fieldId);
+    const error = document.getElementById(fieldId + '-error');
+    field.classList.remove('input-error');
+    error.textContent = '';
   }
 
   function validateName() {
-    const name = document.getElementById('nome').value.trim()
-
+    const name = document.getElementById('nome').value.trim();
     if (name === '') {
-      showError('nome', 'O nome é obrigatório.')
-      return false
+      showError('nome', 'O nome é obrigatório.');
+      return false;
     }
-
     if (name.length < 2) {
-      showError('nome', 'O nome deve ter pelo menos 2 caracteres.')
-      return false
+      showError('nome', 'O nome deve ter pelo menos 2 caracteres.');
+      return false;
     }
-
-    clearError('nome')
-    return true
+    clearError('nome');
+    return true;
   }
 
   function validateEmail() {
-    const email = document.getElementById('email').value.trim()
-
+    const email = document.getElementById('email').value.trim();
     if (email === '') {
-      showError('email', 'O email é obrigatório.')
-      return false
+      showError('email', 'O email é obrigatório.');
+      return false;
     }
-
     if (!email.includes('@') || !email.includes('.')) {
-      showError('email', 'Digite um email válido.')
-      return false
+      showError('email', 'Digite um email válido.');
+      return false;
     }
-
-    clearError('email')
-    return true
+    clearError('email');
+    return true;
   }
 
   function validatePhone() {
-    const phone = document.getElementById('telefone').value.trim()
-    const numbersOnly = phone.replace(/\D/g, '')
-
+    const phone = document.getElementById('telefone').value.trim();
+    const numbersOnly = phone.replace(/\D/g, '');
     if (phone === '') {
-      showError('telefone', 'O telefone é obrigatório.')
-      return false
+      showError('telefone', 'O telefone é obrigatório.');
+      return false;
     }
-
     if (numbersOnly.length < 10 || numbersOnly.length > 11) {
-      showError('telefone', 'Digite um telefone com DDD válido.')
-      return false
+      showError('telefone', 'Digite um telefone com DDD válido.');
+      return false;
     }
-
-    clearError('telefone')
-    return true
+    clearError('telefone');
+    return true;
   }
 
   function validateSubject() {
-    const subject = document.getElementById('assunto').value
-
+    const subject = document.getElementById('assunto').value;
     if (subject === '') {
-      showError('assunto', 'Selecione um assunto.')
-      return false
+      showError('assunto', 'Selecione um assunto.');
+      return false;
     }
-
-    clearError('assunto')
-    return true
+    clearError('assunto');
+    return true;
   }
 
   function validateMessage() {
-    const message = document.getElementById('mensagem').value.trim()
-
+    const message = document.getElementById('mensagem').value.trim();
     if (message === '') {
-      showError('mensagem', 'A mensagem é obrigatória.')
-      return false
+      showError('mensagem', 'A mensagem é obrigatória.');
+      return false;
     }
-
     if (message.length < 10) {
-      showError('mensagem', 'A mensagem deve ter pelo menos 10 caracteres.')
-      return false
+      showError('mensagem', 'A mensagem deve ter pelo menos 10 caracteres.');
+      return false;
     }
-
-    clearError('mensagem')
-    return true
+    clearError('mensagem');
+    return true;
   }
 
   function validateForm() {
-    const nameOk = validateName()
-    const emailOk = validateEmail()
-    const phoneOk = validatePhone()
-    const subjectOk = validateSubject()
-    const messageOk = validateMessage()
-
-    return nameOk && emailOk && phoneOk && subjectOk && messageOk
+    const nameOk = validateName();
+    const emailOk = validateEmail();
+    const phoneOk = validatePhone();
+    const subjectOk = validateSubject();
+    const messageOk = validateMessage();
+    return nameOk && emailOk && phoneOk && subjectOk && messageOk;
   }
 
-  document.getElementById('nome').addEventListener('input', validateName)
-  document.getElementById('email').addEventListener('input', validateEmail)
-  document.getElementById('telefone').addEventListener('input', validatePhone)
-  document.getElementById('assunto').addEventListener('change', validateSubject)
-  document.getElementById('mensagem').addEventListener('input', validateMessage)
+  document.getElementById('nome').addEventListener('input', validateName);
+  document.getElementById('email').addEventListener('input', validateEmail);
+  document.getElementById('telefone').addEventListener('input', validatePhone);
+  document.getElementById('assunto').addEventListener('change', validateSubject);
+  document.getElementById('mensagem').addEventListener('input', validateMessage);
 </script>
 {% endblock %}

@@ -1,9 +1,28 @@
+import os
 import json
 import re
+from pathlib import Path
+
 from flask import Flask, render_template, request, redirect, url_for, flash
+from flask_mail import Mail, Message
+from dotenv import load_dotenv
+
+
+BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / '.env')
 
 app = Flask(__name__)
-app.secret_key = 'encasalimpeza-chave-secreta-2024'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY', 'dev-secret-key-change-me')
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
+app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+app.config['MAIL_DEFAULT_SENDER'] = app.config['MAIL_USERNAME']
+
+mail = Mail(app)
 
 
 def validar_formulario_contato(dados):
@@ -26,7 +45,6 @@ def validar_formulario_contato(dados):
 
     telefone = dados.get('telefone', '').strip()
     apenas_numeros = re.sub(r'\D', '', telefone)
-
     if not telefone:
         erros.append('Telefone é obrigatório.')
     elif len(apenas_numeros) < 10 or len(apenas_numeros) > 11:
@@ -62,7 +80,8 @@ def sobre():
 
 @app.route('/catalogo')
 def catalogo():
-    with open('products.json', 'r', encoding='utf-8') as file:
+    products_path = BASE_DIR / 'products.json'
+    with products_path.open('r', encoding='utf-8') as file:
         todos_produtos = json.load(file)
 
     categorias = [
@@ -79,10 +98,7 @@ def catalogo():
     categoria_selecionada = request.args.get('categoria')
 
     if categoria_selecionada:
-        produtos = [
-            produto for produto in todos_produtos
-            if produto['category'] == categoria_selecionada
-        ]
+        produtos = [produto for produto in todos_produtos if produto['category'] == categoria_selecionada]
     else:
         produtos = todos_produtos
 
@@ -103,13 +119,42 @@ def contato():
         if erros:
             return render_template('contato.html', erros=erros, form=dados)
 
-        print(f"[CONTATO] Nova mensagem de {dados.get('nome')} <{dados.get('email')}>")
+        destinatario = os.getenv('MAIL_DESTINATARIO')
+        if not destinatario:
+            erros = ['MAIL_DESTINATARIO não configurado no ambiente.']
+            return render_template('contato.html', erros=erros, form=dados)
 
-        flash('Mensagem recebida! Entraremos em contato em breve.', 'sucesso')
-        return redirect(url_for('contato'))
+        assunto_map = {
+            'orcamento': 'Orçamento',
+            'duvidas': 'Dúvidas',
+            'reclamacao': 'Reclamação'
+        }
+
+        assunto_txt = assunto_map.get(dados.get('assunto', ''), 'Contato pelo site')
+
+        corpo = (
+            f"Nome: {dados.get('nome')}\n"
+            f"Email: {dados.get('email')}\n"
+            f"Telefone: {dados.get('telefone')}\n"
+            f"Assunto: {assunto_txt}\n\n"
+            f"Mensagem:\n{dados.get('mensagem')}"
+        )
+
+        try:
+            msg = Message(
+                subject=f'Contato do site - {assunto_txt}',
+                recipients=[destinatario],
+                body=corpo
+            )
+            mail.send(msg)
+            flash('Mensagem enviada com sucesso!', 'sucesso')
+            return redirect(url_for('contato'))
+        except Exception:
+            erros = ['Não foi possível enviar a mensagem agora. Verifique a configuração do e-mail.']
+            return render_template('contato.html', erros=erros, form=dados)
 
     return render_template('contato.html')
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

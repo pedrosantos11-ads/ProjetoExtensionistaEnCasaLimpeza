@@ -2,19 +2,15 @@
    EnCasaLimpeza — CSS Global
    ============================================== */
 
-/* ---- FONTE ---- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* ---- RESET ---- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 body { font-family: 'Inter', sans-serif; color: #1e293b; background: #f8fafc; line-height: 1.6; }
 img { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 ul, ol { list-style: none; }
 
-/* ---- VARIÁVEIS ---- */
 :root {
-  /* Cores */
   --cor-primaria:        #10b981;
   --cor-primaria-hover:  #059669;
   --cor-secundaria:      #0ea5e9;
@@ -25,99 +21,109 @@ ul, ol { list-style: none; }
   --cor-fundo:           #f8fafc;
   --cor-card:            #ffffff;
   --cor-borda:           #e2e8f0;
-
-  /* Espaçamentos */
   --espaco-sm:  16px;
   --espaco-md:  24px;
   --espaco-lg:  40px;
   --espaco-xl:  60px;
-
-  /* Bordas */
   --radius-md:  8px;
   --radius-lg:  12px;
   --radius-full: 9999px;
-
-  /* Sombras */
   --sombra-sm:  0 1px 3px rgba(0,0,0,0.06);
   --sombra-md:  0 4px 12px rgba(0,0,0,0.08);
-
-  /* Transição */
   --transicao:  0.18s ease;
 }
 
-/* ---- TIPOGRAFIA ---- */
 h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; color: var(--cor-texto); }
-h1 { font-size: 2rem; }
+h1 { font-size: clamp(1.5rem, 4vw, 2rem); }
 h2 { font-size: 1.3rem; }
 h3 { font-size: 1.1rem; }
 p  { font-size: 0.95rem; color: var(--cor-texto-suave); }
 
-/* ---- CONTAINERS ---- */
 .container    { max-width: 1000px; margin: 0 auto; padding: 0 var(--espaco-md); }
 .container-sm { max-width: 640px;  margin: 0 auto; padding: 0 var(--espaco-md); }
 
-/* ---- PAGE HEADER ---- */
 .page-header { background: var(--cor-gradiente); color: white; text-align: center; padding: var(--espaco-xl) var(--espaco-md); }
-.page-header h1 { color: white; font-size: 2rem; margin-bottom: 12px; }
+.page-header h1 { color: white; font-size: clamp(1.5rem, 4vw, 2rem); margin-bottom: 12px; }
 .page-header p  { color: rgba(255,255,255,0.9); }
 
 /* ---- NAVBAR ---- */
-.navbar { background: #fff; border-bottom: 1px solid var(--cor-borda); padding: var(--espaco-sm) var(--espaco-md); display: flex; align-items: center; justify-content: space-between; }
+.navbar {
+  background: #fff;
+  border-bottom: 1px solid var(--cor-borda);
+  padding: var(--espaco-sm) var(--espaco-md);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 100;
+}
+
 .navbar-logo {
   font-size: 1.2rem;
   font-weight: 700;
   background: var(--cor-gradiente);
   -webkit-background-clip: text;
-  background-clip: text;           /* FIX 1: prefixo padrão adicionado */
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  color: transparent;              /* FIX 1: fallback para browsers sem suporte */
+  color: transparent;
 }
-.navbar-links { display: flex; gap: var(--espaco-md); }
-.navbar-links a { font-size: 0.9rem; font-weight: 500; color: var(--cor-texto-suave); transition: color var(--transicao); }
+
+.navbar-links {
+  display: flex;
+  gap: var(--espaco-md);
+}
+
+.navbar-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--cor-texto-suave);
+  transition: color var(--transicao);
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
 .navbar-links a:hover,
 .navbar-links a.ativo { color: var(--cor-primaria); }
 
-/* ---- BOTÕES ---- */
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: 'Inter', sans-serif;
-  cursor: pointer;
+.navbar-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
   border: none;
-  transition: background var(--transicao);
+  cursor: pointer;
+  padding: 8px;
+  width: 44px;
+  height: 44px;
 }
+
+.navbar-toggle span {
+  display: block;
+  height: 2px;
+  width: 22px;
+  background: var(--cor-texto);
+  border-radius: 2px;
+  transition: transform var(--transicao), opacity var(--transicao);
+}
+
+.navbar-toggle.ativo span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar-toggle.ativo span:nth-child(2) { opacity: 0; }
+.navbar-toggle.ativo span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ---- BOTÕES ---- */
+.btn { display: inline-block; padding: 10px 20px; border-radius: var(--radius-md); font-size: 0.9rem; font-weight: 600; font-family: 'Inter', sans-serif; cursor: pointer; border: none; transition: background var(--transicao); }
 .btn-primario { background: var(--cor-primaria); color: white; }
 .btn-primario:hover { background: var(--cor-primaria-hover); }
 .btn-outline { background: transparent; border: 2px solid var(--cor-primaria); color: var(--cor-primaria); }
 .btn-outline:hover { background: var(--cor-primaria); color: white; }
-.btn-grande {
-  display: block;                  /* FIX 3: corrige conflito com width:100% */
-  width: 100%;
-  padding: 14px 28px;
-  font-size: 1rem;
-}
+.btn-grande { display: block; width: 100%; padding: 14px 28px; font-size: 1rem; }
 
 /* ---- FORMULÁRIOS ---- */
 label { font-size: 0.85rem; font-weight: 500; display: block; margin-bottom: 4px; color: var(--cor-texto); }
-input, select, textarea {
-  width: 100%;
-  padding: 10px 14px;
-  border: 1px solid var(--cor-borda);
-  border-radius: var(--radius-md);
-  font-size: 0.9rem;
-  font-family: 'Inter', sans-serif;
-  color: var(--cor-texto);         /* FIX 4: cor explícita para todos os browsers */
-  background: #ffffff;
-  transition: border-color var(--transicao);
-}
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: var(--cor-primaria);
-  box-shadow: 0 0 0 3px rgba(16,185,129,0.12);
-}
+input, select, textarea { width: 100%; padding: 10px 14px; border: 1px solid var(--cor-borda); border-radius: var(--radius-md); font-size: 0.9rem; font-family: 'Inter', sans-serif; color: var(--cor-texto); background: #ffffff; transition: border-color var(--transicao); }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--cor-primaria); box-shadow: 0 0 0 3px rgba(16,185,129,0.12); }
 textarea { resize: vertical; min-height: 120px; }
 
 /* ---- CARDS ---- */
@@ -139,9 +145,49 @@ textarea { resize: vertical; min-height: 120px; }
 .texto-suave  { color: var(--cor-texto-suave); }
 .margem-topo  { margin-top: var(--espaco-lg); }
 
-/* ---- RESPONSIVO ---- */
+/* ====================================================
+   RESPONSIVO
+   ==================================================== */
+
+@media (max-width: 768px) {
+  .grid-2 { grid-template-columns: 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr; }
+  .secao  { padding: var(--espaco-lg) var(--espaco-sm); }
+}
+
 @media (max-width: 640px) {
   h1 { font-size: 1.5rem; }
   .grid-2, .grid-3 { grid-template-columns: 1fr; }
-  .navbar-links { display: none; }
+  .secao { padding: var(--espaco-md) var(--espaco-sm); }
+
+  .navbar-toggle { display: flex; }
+
+  .navbar-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--cor-borda);
+    flex-direction: column;
+    gap: 0;
+    padding: 8px 0;
+    box-shadow: var(--sombra-md);
+    z-index: 99;
+  }
+
+  .navbar-links.aberto { display: flex; }
+
+  .navbar-links li { width: 100%; }
+
+  .navbar-links a {
+    display: block;
+    padding: 14px var(--espaco-md);
+    font-size: 1rem;
+    border-bottom: 1px solid var(--cor-borda);
+    min-height: 48px;
+  }
+
+  .navbar-links li:last-child a { border-bottom: none; }
 }
