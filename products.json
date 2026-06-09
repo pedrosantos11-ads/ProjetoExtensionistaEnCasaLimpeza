@@ -2,351 +2,241 @@
   {
     "id": 1,
     "brand": "Pinho Sol",
-    "name": "Desinfetante Pinho 1L",
+    "name": "Desinfetante Pinho 1 L",
     "description": "Desinfetante concentrado aroma pinho, elimina 99,9% das bactérias",
-    "category": "Limpeza de Pisos"
+    "category": "Limpeza de Pisos",
+    "image": "Desinfetante-Pinho-1L-12.png"
   },
   {
     "id": 2,
-    "brand": "Ypê",
-    "name": "Desinfetante Lavanda 1L",
+    "brand": "Pinho Sol",
+    "name": "Desinfetante Lavanda 1 L",
     "description": "Desinfetante com fragrância suave de lavanda",
-    "category": "Limpeza de Pisos"
+    "category": "Limpeza de Pisos",
+    "image": "Desinfetante-Lavanda-1L-11.png"
   },
   {
     "id": 3,
     "brand": "Poliflor",
-    "name": "Cera Líquida Incolor 750ml",
+    "name": "Cera Líquida Incolor 750 mL",
     "description": "Cera autobrilho para pisos de cerâmica e porcelanato",
-    "category": "Limpeza de Pisos"
+    "category": "Limpeza de Pisos",
+    "image": "Cera-Liquida-incolor-750ml-7.png"
   },
   {
     "id": 4,
-    "brand": "Veja",
-    "name": "Limpa Pisos Concentrado 5L",
-    "description": "Limpador multiuso concentrado, rende até 250L",
-    "category": "Limpeza de Pisos"
+    "brand": "Limpax",
+    "name": "Limpa Pisos Concentrado 5 L",
+    "description": "Limpador multiuso concentrado, rende até 250 L",
+    "category": "Limpeza de Pisos",
+    "image": "Limpa-pisos-concentrado-5L-20.png"
   },
   {
     "id": 5,
-    "brand": "Minuano",
-    "name": "Removedor de Manchas 500ml",
+    "brand": "Vanish",
+    "name": "Removedor de Manchas 500 mL",
     "description": "Remove manchas difíceis de piso sem danificar",
-    "category": "Limpeza de Pisos"
+    "category": "Limpeza de Pisos",
+    "image": "Removedor-de-Manchas-500-mL-23.png"
   },
   {
     "id": 6,
-    "brand": "Start",
-    "name": "Neutralizador de Odores 2L",
+    "brand": "Desomax",
+    "name": "Neutralizador de Odores 2 L",
     "description": "Elimina odores e deixa aroma agradável",
-    "category": "Limpeza de Pisos"
+    "category": "Limpeza de Pisos",
+    "image": "Neutralizador-de-Odores-2-L-21.png"
   },
   {
     "id": 7,
-    "brand": "Pato Purific",
-    "name": "Limpador Sanitário 500ml",
-    "description": "Limpeza profunda e desinfecção de vasos sanitários",
-    "category": "Banheiro"
+    "brand": "",
+    "name": "Balde 10 L",
+    "description": "Plástico resistente",
+    "category": "Limpeza de Pisos",
+    "image": "Balde-10-L-6.png"
   },
   {
     "id": 8,
-    "brand": "Harpic",
-    "name": "Desinfetante Vaso Gel 500ml",
-    "description": "Gel adesivo que limpa e perfuma",
-    "category": "Banheiro"
+    "brand": "Pato",
+    "name": "Limpador Sanitário 500 mL",
+    "description": "Limpeza profunda e desinfecção de vasos sanitários",
+    "category": "Banheiro",
+    "image": "Limpador-Sanitario-500-mL-19.png"
   },
   {
     "id": 9,
-    "brand": "Veja",
-    "name": "Removedor de Limo 1L",
-    "description": "Remove limo, mofo e manchas de azulejo",
-    "category": "Banheiro"
+    "brand": "Pato",
+    "name": "Desinfetante Vaso Gel 500 mL",
+    "description": "Gel adesivo que limpa e perfuma",
+    "category": "Banheiro",
+    "image": "Desinfetante-Vaso-Gel-500-mL-13.png"
   },
   {
     "id": 10,
-    "brand": "Diabo Verde",
-    "name": "Desentupidor Gel 1L",
-    "description": "Desentope ralos e vasos rapidamente",
-    "category": "Banheiro"
+    "brand": "Suprema",
+    "name": "Removedor de Limo 1 L",
+    "description": "Remove limo, mofo e manchas de azulejo",
+    "category": "Banheiro",
+    "image": "Removedor-de-Limo-1-L-23.png"
   },
   {
     "id": 11,
-    "brand": "Bom Ar",
-    "name": "Aromatizador Banheiro 400ml",
-    "description": "Fragrância duradoura para ambientes",
-    "category": "Banheiro"
+    "brand": "Start Pro",
+    "name": "Desentupidor Gel 1 L",
+    "description": "Desentope ralos e vasos rapidamente",
+    "category": "Banheiro",
+    "image": "Desentupidor-Gel-1-L-9.png"
   },
   {
     "id": 12,
-    "brand": "Pato",
-    "name": "Pastilha Sanitária 3un",
-    "description": "Pastilha adesiva que limpa a cada descarga",
-    "category": "Banheiro"
+    "brand": "",
+    "name": "Aromatizador de Banheiro 400 mL",
+    "description": "Fragrância duradoura para ambientes",
+    "category": "Banheiro",
+    "image": "Aromatizante-400ml-4.png"
   },
   {
     "id": 13,
     "brand": "Ypê",
-    "name": "Detergente Neutro 500ml",
+    "name": "Detergente Neutro 500 mL",
     "description": "Detergente concentrado para louças",
-    "category": "Cozinha"
+    "category": "Cozinha",
+    "image": "Detergente-Neutro-500ml-16.png"
   },
   {
     "id": 14,
     "brand": "Limpol",
-    "name": "Detergente Limão 500ml",
+    "name": "Detergente Limão 500 mL",
     "description": "Remove gordura com aroma cítrico",
-    "category": "Cozinha"
+    "category": "Cozinha",
+    "image": "Detergente-Limao-500-mL-15.png"
   },
   {
     "id": 15,
     "brand": "Veja",
-    "name": "Desengordurante Spray 500ml",
+    "name": "Desengordurante Spray 500 mL",
     "description": "Potente desengordurante para fogão e coifa",
-    "category": "Cozinha"
+    "category": "Cozinha",
+    "image": "Desengordurante-Spray-500-mL-8.png"
   },
   {
     "id": 16,
-    "brand": "Start",
-    "name": "Lava Louças Líquido 5L",
+    "brand": "BellaClean",
+    "name": "Lava Louças Líquido 5 L",
     "description": "Econômico para uso profissional",
-    "category": "Cozinha"
+    "category": "Cozinha",
+    "image": "Lava-Loucas-Liquido-5-L-17.png"
   },
   {
     "id": 17,
-    "brand": "Veja",
-    "name": "Multiuso Spray 500ml",
+    "brand": "Bemhaus",
+    "name": "Multiuso Spray 500 mL",
     "description": "Limpeza geral de superfícies",
-    "category": "Cozinha"
+    "category": "Cozinha",
+    "image": "Multiuso-Spray-500-mL-20.png"
   },
   {
     "id": 18,
-    "brand": "Scotch-Brite",
-    "name": "Esponja Dupla Face 3un",
-    "description": "Lado macio e lado abrasivo",
-    "category": "Cozinha"
+    "brand": "Ypê",
+    "name": "Sabão em Pó 1 kg",
+    "description": "Limpeza profunda das roupas",
+    "category": "Lavanderia",
+    "image": "Sabao-em-Po-1-kg-25.png"
   },
   {
     "id": 19,
-    "brand": "Bombril",
-    "name": "Palha de Aço 8un",
-    "description": "Para limpeza pesada",
-    "category": "Cozinha"
+    "brand": "OMO",
+    "name": "Sabão Líquido 3 L",
+    "description": "Praticidade e eficiência na lavagem",
+    "category": "Lavanderia",
+    "image": "Sabao-Liquido-3-L-26.png"
   },
   {
     "id": 20,
     "brand": "Ypê",
-    "name": "Sabão em Barra 200g",
-    "description": "Multiuso para diversas limpezas",
-    "category": "Cozinha"
+    "name": "Amaciante Concentrado 2 L",
+    "description": "Maciez e perfume duradouro",
+    "category": "Lavanderia",
+    "image": "Amaciante-Concentrado-2-L-3.png"
   },
   {
     "id": 21,
-    "brand": "OMO",
-    "name": "Sabão em Pó 1kg",
-    "description": "Limpeza profunda das roupas",
-    "category": "Lavanderia"
+    "brand": "Deo Line",
+    "name": "Alvejante Sem Cloro 1 L",
+    "description": "Tira manchas sem danificar tecidos",
+    "category": "Lavanderia",
+    "image": "Alvejante-Sem-Cloro-1-L.png"
   },
   {
     "id": 22,
-    "brand": "Ypê",
-    "name": "Sabão Líquido 3L",
-    "description": "Praticidade e eficiência na lavagem",
-    "category": "Lavanderia"
+    "brand": "Suprema",
+    "name": "Água Sanitária 2 L",
+    "description": "Alvejante e desinfetante",
+    "category": "Lavanderia",
+    "image": "Agua-Sanitaria-2-L.png"
   },
   {
     "id": 23,
-    "brand": "Comfort",
-    "name": "Amaciante Concentrado 2L",
-    "description": "Maciez e perfume duradouro",
-    "category": "Lavanderia"
+    "brand": "",
+    "name": "Sabão Coco Líquido 5 L",
+    "description": "Natural e eficiente",
+    "category": "Lavanderia",
+    "image": "Sabao-Coco-Liquido-5-L-25.png"
   },
   {
     "id": 24,
-    "brand": "Vanish",
-    "name": "Alvejante sem Cloro 1L",
-    "description": "Tira manchas sem danificar tecidos",
-    "category": "Lavanderia"
+    "brand": "",
+    "name": "Saco de Lixo 50 L",
+    "description": "Para uso doméstico",
+    "category": "Descartáveis",
+    "image": "Saco-de-Lixo-50-L-28.png"
   },
   {
     "id": 25,
-    "brand": "Vanish",
-    "name": "Removedor de Manchas 500ml",
-    "description": "Remove manchas difíceis",
-    "category": "Lavanderia"
+    "brand": "",
+    "name": "Saco de Lixo 100 L",
+    "description": "Resistente para lixo pesado",
+    "category": "Descartáveis",
+    "image": "Saco-de-Lixo-100-L.png"
   },
   {
     "id": 26,
-    "brand": "Qboa",
-    "name": "Água Sanitária 2L",
-    "description": "Alvejante e desinfetante",
-    "category": "Lavanderia"
+    "brand": "WAP",
+    "name": "Aspirador Profissional 20 L",
+    "description": "Sólidos e líquidos",
+    "category": "Profissional",
+    "image": "Aspirador-Profissional-20-L-5.png"
   },
   {
     "id": 27,
-    "brand": "Ypê",
-    "name": "Sabão Coco Líquido 5L",
-    "description": "Natural e eficiente",
-    "category": "Lavanderia"
+    "brand": "Limpol",
+    "name": "Detergente Neutro 5 L",
+    "description": "Uso profissional concentrado",
+    "category": "Profissional",
+    "image": "Detergente-Neutro-5-L-17.png"
   },
   {
     "id": 28,
-    "brand": "Embalixo",
-    "name": "Saco de Lixo 100L 10un",
-    "description": "Resistente para lixo pesado",
-    "category": "Descartáveis"
+    "brand": "Classic",
+    "name": "Desinfetante 5 L",
+    "description": "Alto rendimento",
+    "category": "Profissional",
+    "image": "Desinfetante-5-L-10.png"
   },
   {
     "id": 29,
-    "brand": "Embalixo",
-    "name": "Saco de Lixo 50L 20un",
-    "description": "Para uso doméstico",
-    "category": "Descartáveis"
+    "brand": "Odd",
+    "name": "Detergente Biodegradável 500 mL",
+    "description": "100% biodegradável",
+    "category": "Eco-Friendly",
+    "image": "Detergente-Biodegradavel-500-mL-14.png"
   },
   {
     "id": 30,
-    "brand": "Snob",
-    "name": "Papel Toalha 2 rolos",
-    "description": "Absorvente e resistente",
-    "category": "Descartáveis"
-  },
-  {
-    "id": 31,
-    "brand": "Neve",
-    "name": "Papel Higiênico 12 rolos",
-    "description": "Folha dupla macia",
-    "category": "Descartáveis"
-  },
-  {
-    "id": 32,
-    "brand": "Snob",
-    "name": "Guardanapo 50un",
-    "description": "Para uso diário",
-    "category": "Descartáveis"
-  },
-  {
-    "id": 33,
-    "brand": "Descarpack",
-    "name": "Luvas Descartáveis M 100un",
-    "description": "Proteção e higiene",
-    "category": "Descartáveis"
-  },
-  {
-    "id": 34,
-    "brand": "Embalixo",
-    "name": "Saco Lixo 30L 30un",
-    "description": "Ideal para banheiros",
-    "category": "Descartáveis"
-  },
-  {
-    "id": 35,
-    "brand": "Condor",
-    "name": "Vassoura Nylon",
-    "description": "Resistente e durável",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 36,
-    "brand": "Condor",
-    "name": "Rodo 40cm",
-    "description": "Borracha de alta qualidade",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 37,
-    "brand": "Sanremo",
-    "name": "Balde 10L",
-    "description": "Plástico resistente",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 38,
-    "brand": "Limpex",
-    "name": "Pano de Chão 5un",
-    "description": "Absorvente e durável",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 39,
-    "brand": "Condor",
-    "name": "Escovão Multiuso",
-    "description": "Para limpeza pesada",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 40,
-    "brand": "Bettanin",
-    "name": "Carrinho de Limpeza",
-    "description": "Completo com espremedor",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 41,
-    "brand": "Vonder",
-    "name": "Luva de Borracha G",
-    "description": "Proteção para mãos",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 42,
-    "brand": "Condor",
-    "name": "Pá de Lixo com Cabo",
-    "description": "Ergonômica",
-    "category": "Equipamentos"
-  },
-  {
-    "id": 43,
-    "brand": "Start",
-    "name": "Detergente Neutro 5L",
-    "description": "Uso profissional concentrado",
-    "category": "Profissional"
-  },
-  {
-    "id": 44,
-    "brand": "Start",
-    "name": "Desinfetante 5L",
-    "description": "Alto rendimento",
-    "category": "Profissional"
-  },
-  {
-    "id": 45,
-    "brand": "Encerabras",
-    "name": "Enceradeira Industrial",
-    "description": "Potente para grandes áreas",
-    "category": "Profissional"
-  },
-  {
-    "id": 46,
-    "brand": "Electrolux",
-    "name": "Aspirador Profissional 20L",
-    "description": "Sólidos e líquidos",
-    "category": "Profissional"
-  },
-  {
-    "id": 47,
-    "brand": "Diversey",
-    "name": "Sistema de Dosagem",
-    "description": "Controle de diluição",
-    "category": "Profissional"
-  },
-  {
-    "id": 48,
-    "brand": "Start",
-    "name": "Limpador Multiuso 5L",
-    "description": "Concentrado profissional",
-    "category": "Profissional"
-  },
-  {
-    "id": 49,
-    "brand": "Ypê",
-    "name": "Detergente Biodegradável 500ml",
-    "description": "100% biodegradável",
-    "category": "Eco-Friendly"
-  },
-  {
-    "id": 50,
-    "brand": "Biowash",
-    "name": "Sabão Vegano 1kg",
+    "brand": "Coquel",
+    "name": "Sabão Vegano 1 kg",
     "description": "Sem ingredientes animais",
-    "category": "Eco-Friendly"
+    "category": "Eco-Friendly",
+    "image": "Sabao-Vegano-1-kg-28.png"
   }
 ]
