@@ -5,7 +5,7 @@
     "name": "Desinfetante Pinho 1 L",
     "description": "Desinfetante concentrado aroma pinho, elimina 99,9% das bactérias",
     "category": "Limpeza de Pisos",
-    "image": "Desinfetante-Pinho-1L-12.png"
+    "image": "Desinfetante Pinho 1L.png"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "name": "Desinfetante Lavanda 1 L",
     "description": "Desinfetante com fragrância suave de lavanda",
     "category": "Limpeza de Pisos",
-    "image": "Desinfetante-Lavanda-1L-11.png"
+    "image": "Desinfetante Lavanda 1L.png"
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "name": "Cera Líquida Incolor 750 mL",
     "description": "Cera autobrilho para pisos de cerâmica e porcelanato",
     "category": "Limpeza de Pisos",
-    "image": "Cera-Liquida-incolor-750ml-7.png"
+    "image": "Cera Liquida incolor 750ml.png"
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "name": "Limpa Pisos Concentrado 5 L",
     "description": "Limpador multiuso concentrado, rende até 250 L",
     "category": "Limpeza de Pisos",
-    "image": "Limpa-pisos-concentrado-5L-20.png"
+    "image": "Limpa pisos concentrado 5L.png"
   },
   {
     "id": 5,
@@ -37,7 +37,7 @@
     "name": "Removedor de Manchas 500 mL",
     "description": "Remove manchas difíceis de piso sem danificar",
     "category": "Limpeza de Pisos",
-    "image": "Removedor-de-Manchas-500-mL-23.png"
+    "image": "Removedor de Manchas — 500 mL.png"
   },
   {
     "id": 6,
@@ -45,7 +45,7 @@
     "name": "Neutralizador de Odores 2 L",
     "description": "Elimina odores e deixa aroma agradável",
     "category": "Limpeza de Pisos",
-    "image": "Neutralizador-de-Odores-2-L-21.png"
+    "image": "Neutralizador de Odores — 2 L.png"
   },
   {
     "id": 7,
@@ -53,7 +53,7 @@
     "name": "Balde 10 L",
     "description": "Plástico resistente",
     "category": "Limpeza de Pisos",
-    "image": "Balde-10-L-6.png"
+    "image": "Balde — 10 L.png"
   },
   {
     "id": 8,
@@ -61,7 +61,7 @@
     "name": "Limpador Sanitário 500 mL",
     "description": "Limpeza profunda e desinfecção de vasos sanitários",
     "category": "Banheiro",
-    "image": "Limpador-Sanitario-500-mL-19.png"
+    "image": "Limpador Sanitário — 500 mL.png"
   },
   {
     "id": 9,
@@ -69,7 +69,7 @@
     "name": "Desinfetante Vaso Gel 500 mL",
     "description": "Gel adesivo que limpa e perfuma",
     "category": "Banheiro",
-    "image": "Desinfetante-Vaso-Gel-500-mL-13.png"
+    "image": "Desinfetante Vaso Gel — 500 mL.png"
   },
   {
     "id": 10,
@@ -77,7 +77,7 @@
     "name": "Removedor de Limo 1 L",
     "description": "Remove limo, mofo e manchas de azulejo",
     "category": "Banheiro",
-    "image": "Removedor-de-Limo-1-L-23.png"
+    "image": "Removedor de Limo — 1 L.png"
   },
   {
     "id": 11,
@@ -85,7 +85,7 @@
     "name": "Desentupidor Gel 1 L",
     "description": "Desentope ralos e vasos rapidamente",
     "category": "Banheiro",
-    "image": "Desentupidor-Gel-1-L-9.png"
+    "image": "Desentupidor Gel — 1 L.png"
   },
   {
     "id": 12,
@@ -93,7 +93,7 @@
     "name": "Aromatizador de Banheiro 400 mL",
     "description": "Fragrância duradoura para ambientes",
     "category": "Banheiro",
-    "image": "Aromatizante-400ml-4.png"
+    "image": "Aromatizante 400ml.png"
   },
   {
     "id": 13,
@@ -101,7 +101,7 @@
     "name": "Detergente Neutro 500 mL",
     "description": "Detergente concentrado para louças",
     "category": "Cozinha",
-    "image": "Detergente-Neutro-500ml-16.png"
+    "image": "Detergente Neutro 500ml.png"
   },
   {
     "id": 14,
@@ -109,7 +109,7 @@
     "name": "Detergente Limão 500 mL",
     "description": "Remove gordura com aroma cítrico",
     "category": "Cozinha",
-    "image": "Detergente-Limao-500-mL-15.png"
+    "image": "Detergente Limão — 500 mL.png"
   },
   {
     "id": 15,
@@ -117,7 +117,7 @@
     "name": "Desengordurante Spray 500 mL",
     "description": "Potente desengordurante para fogão e coifa",
     "category": "Cozinha",
-    "image": "Desengordurante-Spray-500-mL-8.png"
+    "image": "Desengordurante Spray — 500 mL.png"
   },
   {
     "id": 16,
@@ -125,7 +125,7 @@
     "name": "Lava Louças Líquido 5 L",
     "description": "Econômico para uso profissional",
     "category": "Cozinha",
-    "image": "Lava-Loucas-Liquido-5-L-17.png"
+    "image": "Lava Louças Líquido — 5 L.png"
   },
   {
     "id": 17,
@@ -133,7 +133,7 @@
     "name": "Multiuso Spray 500 mL",
     "description": "Limpeza geral de superfícies",
     "category": "Cozinha",
-    "image": "Multiuso-Spray-500-mL-20.png"
+    "image": "Multiuso Spray — 500 mL.png"
   },
   {
     "id": 18,
@@ -141,7 +141,7 @@
     "name": "Sabão em Pó 1 kg",
     "description": "Limpeza profunda das roupas",
     "category": "Lavanderia",
-    "image": "Sabao-em-Po-1-kg-25.png"
+    "image": "Sabão em Pó — 1 kg.png"
   },
   {
     "id": 19,
@@ -149,7 +149,7 @@
     "name": "Sabão Líquido 3 L",
     "description": "Praticidade e eficiência na lavagem",
     "category": "Lavanderia",
-    "image": "Sabao-Liquido-3-L-26.png"
+    "image": "Sabão Líquido — 3 L.png"
   },
   {
     "id": 20,
@@ -157,7 +157,7 @@
     "name": "Amaciante Concentrado 2 L",
     "description": "Maciez e perfume duradouro",
     "category": "Lavanderia",
-    "image": "Amaciante-Concentrado-2-L-3.png"
+    "image": "Amaciante Concentrado — 2 L.png"
   },
   {
     "id": 21,
@@ -165,7 +165,7 @@
     "name": "Alvejante Sem Cloro 1 L",
     "description": "Tira manchas sem danificar tecidos",
     "category": "Lavanderia",
-    "image": "Alvejante-Sem-Cloro-1-L.png"
+    "image": "Alvejante Sem Cloro — 1 L.png"
   },
   {
     "id": 22,
@@ -173,7 +173,7 @@
     "name": "Água Sanitária 2 L",
     "description": "Alvejante e desinfetante",
     "category": "Lavanderia",
-    "image": "Agua-Sanitaria-2-L.png"
+    "image": "Água Sanitária — 2 L.png"
   },
   {
     "id": 23,
@@ -181,7 +181,7 @@
     "name": "Sabão Coco Líquido 5 L",
     "description": "Natural e eficiente",
     "category": "Lavanderia",
-    "image": "Sabao-Coco-Liquido-5-L-25.png"
+    "image": "Sabão Coco Líquido — 5 L.png"
   },
   {
     "id": 24,
@@ -189,7 +189,7 @@
     "name": "Saco de Lixo 50 L",
     "description": "Para uso doméstico",
     "category": "Descartáveis",
-    "image": "Saco-de-Lixo-50-L-28.png"
+    "image": "Saco de Lixo — 50 L.png"
   },
   {
     "id": 25,
@@ -197,7 +197,7 @@
     "name": "Saco de Lixo 100 L",
     "description": "Resistente para lixo pesado",
     "category": "Descartáveis",
-    "image": "Saco-de-Lixo-100-L.png"
+    "image": "Saco de Lixo — 100 L.png"
   },
   {
     "id": 26,
@@ -205,7 +205,7 @@
     "name": "Aspirador Profissional 20 L",
     "description": "Sólidos e líquidos",
     "category": "Profissional",
-    "image": "Aspirador-Profissional-20-L-5.png"
+    "image": "Aspirador Profissional — 20 L.png"
   },
   {
     "id": 27,
@@ -213,7 +213,7 @@
     "name": "Detergente Neutro 5 L",
     "description": "Uso profissional concentrado",
     "category": "Profissional",
-    "image": "Detergente-Neutro-5-L-17.png"
+    "image": "Detergente Neutro — 5 L.png"
   },
   {
     "id": 28,
@@ -221,7 +221,7 @@
     "name": "Desinfetante 5 L",
     "description": "Alto rendimento",
     "category": "Profissional",
-    "image": "Desinfetante-5-L-10.png"
+    "image": "Desinfetante — 5 L.png"
   },
   {
     "id": 29,
@@ -229,7 +229,7 @@
     "name": "Detergente Biodegradável 500 mL",
     "description": "100% biodegradável",
     "category": "Eco-Friendly",
-    "image": "Detergente-Biodegradavel-500-mL-14.png"
+    "image": "Detergente Biodegradável — 500 mL.png"
   },
   {
     "id": 30,
@@ -237,6 +237,6 @@
     "name": "Sabão Vegano 1 kg",
     "description": "Sem ingredientes animais",
     "category": "Eco-Friendly",
-    "image": "Sabao-Vegano-1-kg-28.png"
+    "image": "Sabão Vegano — 1 kg.png"
   }
 ]
