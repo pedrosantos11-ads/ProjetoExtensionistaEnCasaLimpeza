@@ -90,7 +90,6 @@ def catalogo():
         'Cozinha',
         'Lavanderia',
         'Descartáveis',
-        'Equipamentos',
         'Profissional',
         'Eco-Friendly'
     ]
