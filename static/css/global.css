@@ -191,3 +191,25 @@ textarea { resize: vertical; min-height: 120px; }
 
   .navbar-links li:last-child a { border-bottom: none; }
 }
+
+/*animacoes*/
+.hover-lift {
+    transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+    cursor: pointer;
+}
+
+.hover-lift:hover {
+    transform: scale(1.05) translateY(-8px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hover-glow {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 25px 10px rgba(66, 153, 225, 0.35);
+    text-shadow: 0 0 20px rgba(66, 153, 225, 0.6);
+    border-color: rgba(66, 153, 225, 0.5);
+}
