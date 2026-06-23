@@ -1,0 +1,420 @@
+{% extends 'base.html' %}
+
+{% block titulo %}EnCasaLimpeza – Contato{% endblock %}
+
+{% block estilos %}
+<style>
+  .contato-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espaco-lg);
+    max-width: 1180px;
+    margin: 60px auto;
+    padding: 0 var(--espaco-md);
+    align-items: start;
+  }
+
+  .contato-info h2,
+  .contato-formulario h2 {
+    margin-bottom: 24px;
+  }
+
+  .contato-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-bottom: 24px;
+  }
+
+  .contato-item-icone {
+    font-size: 1.4rem;
+    line-height: 1;
+  }
+
+  .contato-item strong {
+    display: block;
+    margin-bottom: 4px;
+    font-weight: 600;
+    color: var(--cor-texto);
+  }
+
+  .contato-item p,
+  .contato-item a {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+  }
+
+  .contato-item a:hover {
+    color: var(--cor-primaria);
+  }
+
+  .contato-bloco-mapa {
+    margin-top: 18px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+    border: 1px solid #e5e7eb;
+    background: #fff;
+  }
+
+  .mapa-container {
+    position: relative;
+    width: 100%;
+    min-height: 260px;
+    padding-top: 62%;
+  }
+
+  .mapa-container iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .contato-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .alerta {
+    max-width: 1180px;
+    margin: 16px auto 0;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 500;
+  }
+
+  .alerta-sucesso {
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #166534;
+  }
+
+  .alerta-erro {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+  }
+
+  .erros-servidor {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: #991b1b;
+    font-size: 0.9rem;
+  }
+
+  .erros-servidor ul {
+    list-style: disc;
+    padding-left: 16px;
+  }
+
+  .visite-loja {
+    text-align: center;
+    padding: 60px 32px;
+    background-color: #f8fafc;
+    margin-top: 0;
+  }
+
+  .visite-loja h2 {
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    color: #1e293b;
+  }
+
+  .visite-loja p {
+    color: #64748b;
+    max-width: 560px;
+    margin: 0 auto 28px;
+    line-height: 1.6;
+  }
+
+  .visite-loja-botoes {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .btn-whatsapp:hover {
+    background-color: #1ebe5d;
+  }
+
+  .btn-ligar {
+    background-color: #3b82f6;
+    color: #fff;
+    padding: 12px 28px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .btn-ligar:hover {
+    background-color: #2563eb;
+  }
+
+  .error-message {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    color: #dc2626;
+  }
+
+  .input-error {
+    border: 2px solid #dc2626 !important;
+  }
+
+  @media (max-width: 640px) {
+    .contato-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .mapa-container {
+      padding-top: 72%;
+    }
+  }
+</style>
+{% endblock %}
+
+{% block conteudo %}
+<section class="page-header">
+  <h1>Entre em Contato</h1>
+  <p>Estamos prontos para atender você. Visite nossa loja ou entre em contato pelos canais abaixo.</p>
+</section>
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for categoria, mensagem in messages %}
+      <div class="alerta alerta-{{ categoria }}">
+        {{ mensagem }}
+      </div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<section class="contato-layout">
+  <div class="contato-info">
+    <h2>Informações de Contato</h2>
+
+    <div class="contato-item">
+     <span class="contato-item-icone"><i data-lucide="map-pin"></i></span>
+      <div>
+        <strong>Endereço</strong>
+        <p>Praça São Charbel, 12, Jardim Andere</p>
+      </div>
+    </div>
+
+    <div class="contato-item">
+      <span class="contato-item-icone"><i data-lucide="phone"></i></span>
+      <div>
+        <strong>Telefone</strong>
+        <a href="tel:+553532237075">(35) 3223-7075</a>
+      </div>
+    </div>
+
+    <div class="contato-item">
+      <span class="contato-item-icone"><i data-lucide="mail"></i></span>
+      <div>
+        <strong>Email</strong>
+        <a href="mailto:vendas@encasalimpeza.com.br">vendas@encasalimpeza.com.br</a>
+      </div>
+    </div>
+
+    <div class="contato-item">
+     <span class="contato-item-icone"><i data-lucide="clock-3"></i></span>
+      <div>
+        <strong>Horário</strong>
+        <p>Segunda a Sexta: 08h às 18h</p>
+        <p>Sábado: 08h às 12h</p>
+      </div>
+    </div>
+
+    <div class="contato-bloco-mapa">
+      <div class="mapa-container">
+        <iframe
+          src="https://www.google.com/maps?q=Pra%C3%A7a%20S%C3%A3o%20Charbel,%2012,%20Jardim%20Andere&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa da EnCasaLimpeza"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <div class="contato-formulario">
+    <h2>Envie uma Mensagem</h2>
+
+    <form class="contato-form" action="{{ url_for('contato') }}" method="POST" onsubmit="return validateForm()">
+      <div>
+        <label for="nome">Nome Completo *</label>
+        <input type="text" id="nome" name="nome" placeholder="Seu nome" value="{{ form.nome if form else '' }}" required>
+        <small id="nome-error" class="error-message"></small>
+      </div>
+
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="seu@email.com" value="{{ form.email if form else '' }}" required>
+        <small id="email-error" class="error-message"></small>
+      </div>
+
+      <div>
+        <label for="telefone">Telefone *</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(35) 99999-9999" value="{{ form.telefone if form else '' }}" required>
+        <small id="telefone-error" class="error-message"></small>
+      </div>
+
+      <div>
+        <label for="assunto">Assunto *</label>
+        <select id="assunto" name="assunto" required>
+          <option value="">Selecione um assunto</option>
+          <option value="orcamento" {% if form and form.assunto == 'orcamento' %}selected{% endif %}>Orçamento</option>
+          <option value="duvidas" {% if form and form.assunto == 'duvidas' %}selected{% endif %}>Dúvidas</option>
+          <option value="reclamacao" {% if form and form.assunto == 'reclamacao' %}selected{% endif %}>Reclamação</option>
+        </select>
+        <small id="assunto-error" class="error-message"></small>
+      </div>
+
+      <div>
+        <label for="mensagem">Mensagem *</label>
+        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem..." required>{{ form.mensagem if form else '' }}</textarea>
+        <small id="mensagem-error" class="error-message"></small>
+      </div>
+
+      {% if erros %}
+        <div class="erros-servidor">
+          <ul>
+            {% for erro in erros %}
+              <li>{{ erro }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+
+      <button type="submit" class="btn btn-primario btn-grande">Enviar Mensagem</button>
+    </form>
+  </div>
+</section>
+
+<section class="visite-loja">
+  <h2>Visite Nossa Loja</h2>
+  <p>Venha conhecer nossa loja física e fale diretamente com nossa equipe. Teremos prazer em atendê-lo e ajudar a encontrar os produtos ideais para suas necessidades.</p>
+  <div class="visite-loja-botoes">
+    <a href="https://wa.me/553532237075" target="_blank" rel="noopener noreferrer" class="btn-whatsapp hover-lift hover-glow-verde">WhatsApp</a>
+    <a href="tel:+553532237075" class="btn-ligar hover-lift hover-glow-azul">Ligar Agora</a>
+  </div>
+</section>
+
+<script>
+  function showError(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const error = document.getElementById(fieldId + '-error');
+    field.classList.add('input-error');
+    error.textContent = message;
+  }
+
+  function clearError(fieldId) {
+    const field = document.getElementById(fieldId);
+    const error = document.getElementById(fieldId + '-error');
+    field.classList.remove('input-error');
+    error.textContent = '';
+  }
+
+  function validateName() {
+    const name = document.getElementById('nome').value.trim();
+    if (name === '') {
+      showError('nome', 'O nome é obrigatório.');
+      return false;
+    }
+    if (name.length < 2) {
+      showError('nome', 'O nome deve ter pelo menos 2 caracteres.');
+      return false;
+    }
+    clearError('nome');
+    return true;
+  }
+
+  function validateEmail() {
+    const email = document.getElementById('email').value.trim();
+    if (email === '') {
+      showError('email', 'O email é obrigatório.');
+      return false;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      showError('email', 'Digite um email válido.');
+      return false;
+    }
+    clearError('email');
+    return true;
+  }
+
+  function validatePhone() {
+    const phone = document.getElementById('telefone').value.trim();
+    const numbersOnly = phone.replace(/\D/g, '');
+    if (phone === '') {
+      showError('telefone', 'O telefone é obrigatório.');
+      return false;
+    }
+    if (numbersOnly.length < 10 || numbersOnly.length > 11) {
+      showError('telefone', 'Digite um telefone com DDD válido.');
+      return false;
+    }
+    clearError('telefone');
+    return true;
+  }
+
+  function validateSubject() {
+    const subject = document.getElementById('assunto').value;
+    if (subject === '') {
+      showError('assunto', 'Selecione um assunto.');
+      return false;
+    }
+    clearError('assunto');
+    return true;
+  }
+
+  function validateMessage() {
+    const message = document.getElementById('mensagem').value.trim();
+    if (message === '') {
+      showError('mensagem', 'A mensagem é obrigatória.');
+      return false;
+    }
+    if (message.length < 10) {
+      showError('mensagem', 'A mensagem deve ter pelo menos 10 caracteres.');
+      return false;
+    }
+    clearError('mensagem');
+    return true;
+  }
+
+  function validateForm() {
+    const nameOk = validateName();
+    const emailOk = validateEmail();
+    const phoneOk = validatePhone();
+    const subjectOk = validateSubject();
+    const messageOk = validateMessage();
+    return nameOk && emailOk && phoneOk && subjectOk && messageOk;
+  }
+
+  document.getElementById('nome').addEventListener('input', validateName);
+  document.getElementById('email').addEventListener('input', validateEmail);
+  document.getElementById('telefone').addEventListener('input', validatePhone);
+  document.getElementById('assunto').addEventListener('change', validateSubject);
+  document.getElementById('mensagem').addEventListener('input', validateMessage);
+</script>
+{% endblock %}
