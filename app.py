@@ -72,10 +72,11 @@ def validar_formulario_contato(dados):
 def enviar_email_async(app_ctx, msg):
     with app_ctx.app_context():
         try:
+            print(">>> Tentando enviar e-mail...")
             mail.send(msg)
+            print(">>> E-mail enviado com sucesso!")
         except Exception as e:
-            print(f"Erro ao enviar e-mail: {e}")
-
+            print(f">>> Erro ao enviar e-mail: {e}")
 
 @app.route('/')
 def inicio():
